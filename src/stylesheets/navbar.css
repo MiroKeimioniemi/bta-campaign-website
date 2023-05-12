@@ -1,0 +1,26 @@
+.desktop-nav {
+    background-color: black;
+}
+
+.desktop-nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    height: 3.5rem;
+}
+
+.desktop-nav-item {
+    margin: 0 1rem;
+}
+
+.desktop-nav-text {
+    color: white;
+    font-weight: lighter;
+    font-size: 1.4rem;
+}
+
+#logo {
+    height: 2.5rem;
+}
