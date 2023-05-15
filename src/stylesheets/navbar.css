@@ -1,26 +1,58 @@
+@import url(../stylesheets/style.css);
+
 .desktop-nav {
+    display: none;
+}
+
+.mobile-nav {
+    display: flex;
+    align-items: center;
     background-color: black;
 }
 
-.desktop-nav-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    height: 3.5rem;
-}
-
-.desktop-nav-item {
-    margin: 0 1rem;
-}
-
-.desktop-nav-text {
-    color: white;
-    font-weight: lighter;
-    font-size: 1.4rem;
-}
-
-#logo {
+.logo {
     height: 2.5rem;
+    margin-left: calc(50vw - 1.25rem);
+}
+
+.hamburger {
+    margin-left: auto;
+}
+
+@media only screen and (min-width: 600px) {
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: block;
+        position: absolute;
+        width: 100vw;
+        background-color: black;
+        z-index: 1000;
+    }
+
+    .desktop-nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        height: var(--navbar-height);
+    }
+
+    .desktop-nav-item {
+        margin: 0 1rem;
+    }
+
+    .desktop-nav-text {
+        color: white;
+        font-weight: lighter;
+        font-size: 1.4rem;
+    }
+
+    .logo {
+        margin: 0;
+    }
 }
