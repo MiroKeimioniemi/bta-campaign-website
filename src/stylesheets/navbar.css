@@ -47,7 +47,11 @@
     font-size: 1.4rem;
 }
 
-@media only screen and (min-width: 600px) {
+.nav-text:hover {
+    text-shadow: 0 0 0.2rem rgba(255, 255, 255, 1);
+}
+
+@media only screen and (min-aspect-ratio: 14/9) {
 
     .mobile-nav {
         display: none;
@@ -75,7 +79,7 @@
     }
 
     .desktop-nav-item {
-        margin: 0 1rem;
+        padding: 0 1rem;
     }
 
     .logo {
