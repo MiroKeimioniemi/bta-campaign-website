@@ -19,9 +19,41 @@
     margin-left: auto;
 }
 
+.menu {
+    display: flex;
+    width: 100vw;
+    height: calc(100vh - var(--navbar-height));
+    background-color: #111111;
+    position: absolute;
+    z-index: 1000;
+}
+
+.mobile-menu-links {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+}
+
+.mobile-menu-item {
+    margin-top: 1.4rem;
+
+}
+
+.nav-text {
+    color: white;
+    font-weight: lighter;
+    font-size: 1.4rem;
+}
+
 @media only screen and (min-width: 600px) {
 
     .mobile-nav {
+        display: none;
+    }
+
+    .menu {
         display: none;
     }
 
@@ -44,12 +76,6 @@
 
     .desktop-nav-item {
         margin: 0 1rem;
-    }
-
-    .desktop-nav-text {
-        color: white;
-        font-weight: lighter;
-        font-size: 1.4rem;
     }
 
     .logo {
