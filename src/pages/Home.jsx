@@ -4,6 +4,7 @@ import '../stylesheets/style.css'
 import '../stylesheets/home.css'
 import backgroundImage from '../images/addicts.png'
 import phone from '../images/cropped-phone.png'
+import lookingAtPhone from '../images/person-looking-at-phone.jpg'
 
 export default function Home() {
     return(
@@ -28,6 +29,12 @@ export default function Home() {
                     Take Quiz
                 </button></Link>
             </main>
+            
+            <section className="stats-container">
+                <div className="image-container"><img src={lookingAtPhone} alt="person looking at phone" className="stats-image"/></div>
+                <p className="clarification">Global daily average screen time*</p>
+                <p className="big-number">6h 58min</p>
+            </section>
         </div>
     )
 }
