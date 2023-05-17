@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: calc(100vh - var(--navbar-height));
+  height: calc(100vh);
   position: relative;
 }
 
@@ -62,7 +62,7 @@
 
 .landing-subheading {
   color: white;
-  width: 90vw;
+  width: 90%;
   max-width: 20rem;
   margin-top: 30vh;
   font-size: 4vh;
@@ -73,7 +73,7 @@
 .landing-text {
   color: white;
   font-size: 2.5vh;
-  width: 90vw;
+  width: 90%;
   max-width: 20rem;
   margin-top: 2vh;
 }
@@ -136,6 +136,51 @@ button:hover {
   font-size: 7vh;
   font-weight: bold;
   text-shadow: 0.1rem 0.2rem 0.8rem rgba(0, 0, 0, 0.75);
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.5vh;
+  margin: 1vh 0;
+}
+
+.why-article {
+  width: 80vw;
+}
+
+.video-container {
+  margin-top: 2vh;
+  width: 80vw;
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -4%;
+}
+
+.highlight-video {
+  width: 100%;
+  height: 45vw;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.further-reading {
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 60vw;
+}
+
+.further-reading-image {
+  margin: 1vh;
+  max-width: 100%;
 }
 
 @media only screen and (min-height: 870px) {
@@ -239,6 +284,20 @@ button:hover {
 
   .stats-image {
     filter: none;
+  }
+
+  .video-container {
+    margin-top: 4vh;
+    width: 60vw;
+    margin-bottom: -21%;
+  }
+  
+  .highlight-video {
+    height: 33.75vw;
+  }
+
+  .further-reading-image {
+    height: 60vh;
   }
 
 }
