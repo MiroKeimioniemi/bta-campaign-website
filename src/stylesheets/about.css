@@ -15,15 +15,9 @@
 }
 
 .about-mobile-main-heading {
-    margin-top: 4vh;
+    margin-top: clamp(1vh, 4vh, 4vw);
     text-align: left;
-    font-size: 7vh;
-    line-height: 7vh;
     margin-bottom: 4vh;
-}
-
-.about-paragraph {
-    font-size: 2.5vh;
 }
 
 .about-link {

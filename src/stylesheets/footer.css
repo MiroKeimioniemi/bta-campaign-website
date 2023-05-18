@@ -1,4 +1,5 @@
 .footer {
+    margin-top: 8vh;
     background-color: #111111;
     display: flex;
     flex-direction: column;

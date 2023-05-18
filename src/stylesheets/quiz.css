@@ -1,0 +1,120 @@
+.quiz-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--navbar-height) 0 0 0;
+    margin-bottom: 4vh;
+}
+
+.quiz-heading {
+    font-size: clamp(1rem, 4vh, 10vw);
+    line-height: clamp(1rem, 5vh, 10vw);
+    margin: 2vh 0;
+    width: 80vw;
+}
+
+.bitrain {
+    display: none;
+}
+
+.question {
+    width: 80vw;
+    margin-bottom: 2vh;
+}
+
+.input-field {
+    border: solid 0.1rem gray;
+    border-radius: 0.2rem;
+    width: clamp(10rem, 20vh, 16rem);
+    height: clamp(2rem, 4vh, 4rem);
+    font-size: clamp(1rem, 2.5vh, 6.4vw);
+    padding-left: 0.4rem;
+}
+
+.select-country {
+    border: solid 0.1rem gray;
+    border-radius: 0.2rem;
+    width: clamp(12rem, 20vh, 16rem);
+    height: clamp(2rem, 4vh, 4rem);
+    font-size: clamp(1rem, 2.5vh, 6.4vw);
+    padding-left: 0.4rem;
+}
+
+.demographics {
+    display: flex;
+    flex-direction: column;
+}
+
+.week-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+.weekday {
+    width: 8vw;
+    border: solid 0.1rem gray;
+    border-radius: 0.2rem;
+    padding-left: 0.4rem;
+    font-size: clamp(1rem, 2.5vh, 6.4vw);
+    height: 4vh;
+}
+
+.submit-button {
+    margin-top: 2vh;
+    color: black;
+    font-weight: bold;
+    border: solid 0.2rem black;
+    border-radius: 10vh;
+    font-size: clamp(1rem, 2.5vh, 6.4vw);
+    width: clamp(6rem, 20vh, 50vw);
+    height: clamp(2rem, 6vh, 15vw);
+    background: none;
+}
+
+@media only screen and (min-aspect-ratio: 14/9) {
+
+    .week-input {
+        width: 40vw;
+    }
+
+    .weekday {
+        width: 4vw;
+    }
+
+    .quiz-body {
+        margin-left: 15vw;
+    }
+
+    .quiz-heading {
+        width: 40vw;
+        align-self: flex-start;
+    }
+
+    .demographics {
+        width: 40vw;
+        flex-direction: row;
+        align-self: flex-start;
+        justify-content: space-between;
+    }
+
+    .question {
+        width: 40vw;
+        align-self: flex-start;
+    }
+
+    .bitrain {
+        display: block;
+        position: absolute;
+        right: 15vw;
+        width: 20vw;
+        z-index: -1;
+    }
+
+    .submit-button {
+        margin-left: 10vw;
+    }
+
+}
