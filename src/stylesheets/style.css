@@ -29,12 +29,18 @@
     z-index: 1000;
 }
 
+h1 {
+    font-size: clamp(1rem, 7vh, 18vw);
+    line-height: clamp(1rem, 7vh, 18vw);
+}
+
 h2 {
-    font-size: 4vh;
+    font-size: clamp(1rem, 4vh, 10vw);
     margin: 2vh 0;
 }
 
 p {
+    font-size: clamp(1rem, 2.5vh, 6.4vw);
     margin: 2vh 0;
 }
 

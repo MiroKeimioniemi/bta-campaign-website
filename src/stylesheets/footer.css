@@ -23,7 +23,7 @@
 }
 
 .small-print {
-    font-size: 1.5vh;
+    font-size: clamp(1rem, 1.5vh, 3.9vw);
     color: grey;
     margin: 0;
 }

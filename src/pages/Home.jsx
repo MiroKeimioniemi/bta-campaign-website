@@ -68,6 +68,7 @@ export default function Home() {
                     <a href="https://www.thesocialdilemma.com/"><img src={socialDilemma} alt="the social dilemma documentary" className="further-reading-image"/></a>
                     <a href="https://calnewport.com/writing/"><img src={digitalMinimalism} alt="Cal Newport - Digital Minimalism book" className="further-reading-image"/></a>
                 </div>
+                <p className="sources">*Source: <a href="https://explodingtopics.com/blog/screen-time-stats">https://explodingtopics.com/blog/screen-time-stats</a> (accessed 18.5.2023)</p>
             </section>
 
         </div>

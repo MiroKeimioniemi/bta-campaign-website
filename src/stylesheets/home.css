@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - (var(--navbar-height)));
   position: relative;
 }
 
@@ -42,8 +42,6 @@
   position: relative;
   text-align: left;
   color: white;
-  font-size: 7vh;
-  line-height: 7vh;
   text-shadow: 0.1rem 0.2rem 0.4rem rgba(0, 0, 0, 0.75);
 }
 
@@ -56,7 +54,7 @@
   height: 36vh;
   max-width: 100%;
   position: absolute;
-  top: 18vh;
+  top: 17vh;
   z-index: -1;
 }
 
@@ -64,29 +62,27 @@
   color: white;
   width: 90%;
   max-width: 20rem;
-  margin-top: 30vh;
-  font-size: 4vh;
+  margin-top: 24vh;
   text-align: center;
   text-shadow: 0.1rem -0.2rem 0.4rem rgba(0, 0, 0, 0.75);
 }
 
 .landing-text {
   color: white;
-  font-size: 2.5vh;
   width: 90%;
   max-width: 20rem;
-  margin-top: 2vh;
+  margin-top: 1vh;
 }
 
 button {
-  margin-top: 3vh;
+  margin-top: 2vh;
   color: white;
-  font-size: 2.5vh;
   font-weight: bold;
   border: solid 0.2rem white;
   border-radius: 10vh;
-  width: 20vh;
-  height: 6vh;
+  font-size: clamp(1rem, 2.5vh, 6.4vw);
+  width: clamp(6rem, 20vh, 50vw);
+  height: clamp(2rem, 6vh, 15vw);
   background: none;
 }
 
@@ -121,7 +117,7 @@ button:hover {
 }
 
 .clarification {
-  font-size: 2.15vh;
+  font-size: clamp(1rem, 2.15vh, 5.6vw);
   font-weight: lighter;
   margin-top: 20%;
   position: absolute;
@@ -133,7 +129,7 @@ button:hover {
   margin-top: 22%;
   position: absolute;
   color: white;
-  font-size: 7vh;
+  font-size: clamp(1rem, 7vh, 18vw);
   font-weight: bold;
   text-shadow: 0.1rem 0.2rem 0.8rem rgba(0, 0, 0, 0.75);
 }
@@ -170,6 +166,8 @@ button:hover {
 }
 
 .further-reading {
+  margin: 0;
+  padding: 0;
   margin-top: 4vh;
   display: flex;
   flex-direction: row;
@@ -179,8 +177,14 @@ button:hover {
 }
 
 .further-reading-image {
-  margin: 1vh;
-  max-width: 100%;
+  margin: 1%;
+  max-width: 98%;
+}
+
+.sources {
+  width: 80vw;
+  word-wrap: break-word;
+  font-size: clamp(1rem, 1.5vh, 3.9vw);
 }
 
 @media only screen and (min-height: 870px) {
@@ -199,12 +203,10 @@ button:hover {
 
   .landing-subheading {
     max-width: 34rem;
-    font-size: 3.6rem;
   }
 
   .landing-text {
     max-width: 32rem;
-    font-size: 2rem;
   }
 
 }
@@ -244,9 +246,9 @@ button:hover {
     display: block;
     position: relative;
     text-align: center;
-    margin-top: 4rem;
+    margin-top: clamp(5rem, 12vh, 20vw);
     color: white;
-    font-size: 7vw;
+    font-size: clamp(1rem, 7vw, 18vh);
     text-shadow: 0.1rem 0.2rem 0.4rem rgba(0, 0, 0, 0.75);
   }
   
@@ -259,8 +261,8 @@ button:hover {
   }
   
   .landing-subheading {
-    margin: 12vh 0 0 10vw;
-    font-size: 3vw;
+    margin: 16vh 0 0 10vw;
+    font-size: clamp(1rem, 3vw, 7.8vh);
     max-width: 50vw;
     text-align: start;
   }
@@ -268,17 +270,17 @@ button:hover {
   .landing-text {
     margin: 0 10vw;
     font-weight: lighter;
-    font-size: 2vw;
+    font-size: clamp(1rem, 2vw, 5.2vh);
     max-width: 40vw;
     margin-top: 1vh;
   }
 
   button {
     margin: 0 25vw;
-    margin-top: 3vw;
-    font-size: 2vw;
-    width: 14vw;
-    height: 4vw;
+    margin-top: clamp(1rem, 3vw, 6vh);
+    font-size: clamp(1rem, 2vw, 5.2vh);
+    width: clamp(7rem, 14vw, 36vh);
+    height: clamp(2rem, 4vw, 12vh);
     border-radius: 10vw;
   }
 
