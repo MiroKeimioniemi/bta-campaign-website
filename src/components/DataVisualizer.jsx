@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Piechart } from "../components/Piechart";
 import '../stylesheets/style.css';
 import '../stylesheets/dataVisualizer.css';

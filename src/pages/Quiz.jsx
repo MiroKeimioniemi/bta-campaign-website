@@ -59,7 +59,7 @@ export default function Quiz() {
         <div className="quiz-body">
 
             {/* Quiz form */}
-            <img src={bitrain} className="bitrain" />
+            <img src={bitrain} className="bitrain" alt="" />
             <h1 className="quiz-heading">Calculate who is winning, you or the algorithms</h1>
 
             {/* Demographics questions to determine remaining life expectacy */}

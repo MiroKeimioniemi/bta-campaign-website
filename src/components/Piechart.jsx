@@ -4,7 +4,6 @@ import '../stylesheets/style.css';
 import '../stylesheets/dataVisualizer.css';
 
 export const options = {
-    legend: 'below',
     pieStartAngle: -120,
     slices: {
         1: { color: 'orange' },
@@ -13,6 +12,7 @@ export const options = {
     legend: {
         position: 'bottom',
         alignment: 'center',
+        orientation: 'vertical',
         maxLines: 4,
         textStyle: { 
             fontName: 'Open Sans',
