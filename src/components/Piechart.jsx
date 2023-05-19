@@ -1,7 +1,7 @@
 import React from "react";
 import { Chart } from "react-google-charts";
-import '../stylesheets/style.css'
-import '../stylesheets/dataVisualizer.css'
+import '../stylesheets/style.css';
+import '../stylesheets/dataVisualizer.css';
 
 export const options = {
     legend: 'below',

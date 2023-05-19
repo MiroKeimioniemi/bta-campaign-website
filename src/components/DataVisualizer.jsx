@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Piechart } from "../components/Piechart";
-import '../stylesheets/style.css'
-import '../stylesheets/dataVisualizer.css'
+import '../stylesheets/style.css';
+import '../stylesheets/dataVisualizer.css';
 
 export default function DataVisualizer(props) {
 
@@ -81,7 +81,7 @@ export default function DataVisualizer(props) {
                             : <p className="number">You are on top of your social media usage!</p>
                     }
 
-                    <p>Remaining life expectancy in total:</p>
+                    <p>Remaining life expectancy in total*:</p>
                     <p className="number">{remainingLifeExpectancyYears} years {remainingLifeExpectancyMonths} months</p>
 
                     <p>Remaining awaking time:</p>
@@ -92,9 +92,13 @@ export default function DataVisualizer(props) {
 
                     <p>Proportion of waking time spent online:</p>
                     <p className="number">{(proportionOnline * 100).toFixed(1)}% <span className="yearsAndMonths"> ({proportionOnlineYears} years {proportionOnlineMonths} month)</span></p>
-                    
+
                 </div>
+
             </section>
+
+            <p className="sources">*Source: <a href="https://www.who.int/data/gho/data/indicators/indicator-details/GHO/life-expectancy-at-birth-(years)">https://www.who.int/data/gho/data/indicators/indicator-details/GHO/life-expectancy-at-birth-(years)</a> (accessed 19.5.2023)</p>
+
         </div>
     )
     

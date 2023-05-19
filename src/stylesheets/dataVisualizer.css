@@ -25,6 +25,12 @@
     margin-top: 4vh;
 }
 
+.sources {
+    width: 80vw;
+    word-wrap: break-word;
+    font-size: clamp(1rem, 1.5vh, 3.9vw);
+  }
+
 @media only screen and (min-aspect-ratio: 1/1) {
 
     .visual {

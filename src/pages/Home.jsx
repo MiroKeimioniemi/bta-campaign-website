@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-import '../stylesheets/style.css'
-import '../stylesheets/home.css'
-import backgroundImage from '../images/addicts.png'
-import phone from '../images/cropped-phone.png'
-import lookingAtPhone from '../images/person-looking-at-phone.jpg'
-import socialDilemma from '../images/the-social-dilemma.png'
-import digitalMinimalism from '../images/digital-minimalism.png'
+import '../stylesheets/style.css';
+import '../stylesheets/home.css';
+import backgroundImage from '../images/addicts.webp';
+import phone from '../images/cropped-phone.webp';
+import lookingAtPhone from '../images/person-looking-at-phone.webp';
+import socialDilemma from '../images/the-social-dilemma.webp';
+import digitalMinimalism from '../images/digital-minimalism.webp';
 
 export default function Home() {
     return(

@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 import DataEntry from '../DataEntry';
-import '../stylesheets/style.css'
-import '../stylesheets/quiz.css'
-import bitrain from '../images/bitrain.png'
 import DataVisualizer from "../components/DataVisualizer";
+import '../stylesheets/style.css';
+import '../stylesheets/quiz.css';
+import bitrain from '../images/bitrain.webp';
 
 const countries = [
     { code: "fi", name: "Finland" },
