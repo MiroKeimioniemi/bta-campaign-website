@@ -3,6 +3,7 @@ import DataEntry from '../DataEntry';
 import '../stylesheets/style.css'
 import '../stylesheets/quiz.css'
 import bitrain from '../images/bitrain.png'
+import DataVisualizer from "../components/DataVisualizer";
 
 const countries = [
     { code: "fi", name: "Finland" },
@@ -18,7 +19,7 @@ export default function Quiz() {
 
     const [quizValues, setQuizValues] = useState({
         age: '',
-        country: '',
+        country: 'fi',
         idealUsage: '',
         estimatedUsage: '',
         day1: '',
@@ -64,10 +65,10 @@ export default function Quiz() {
                 </div>
                 <div className="question">
                     <p>Where do you live?</p>
-                    <select name="country" className="select-country" onChange={logInput}>
+                    <select name="country" className="select-country" onBeforeInput={logInput} onChange={logInput}>
                         {countries.map((country) => (
                             <option key={country.code} value={country.code}>
-                            {country.name}
+                                {country.name}
                             </option>
                         ))}
                     </select>
@@ -99,6 +100,7 @@ export default function Quiz() {
                 <div id="results">
                     <p>Heyo</p>
                     <p>{dataEntries.map(x => (x.age + '\n'))}</p>
+                    <DataVisualizer data={dataEntries} />
                 </div>
             )}
 
