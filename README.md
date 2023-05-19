@@ -3,11 +3,11 @@
 #BeatTheAlgorithm is a demo campaign website made for CS-C1180 - Verkkojulkaisemisen perusteet
 (roughly translating to: basics of web publishing) course held in Aalto University in the spring of 2023.
 
-Its purpose is to serve as a wake up call about one's social media habits, framing these in a new, larger,
+Its purpose is to serve as a wake-up call about one's social media habits, framing these in a new, larger,
 life-wide perspective that hopefully gives the visitor some new insight about what they actually value
 about social media and what is just noise and procrastination. 
 
-The website is deployed here: [https://mirokeimioniemi.github.io/bta-campaign-website/](https://mirokeimioniemi.github.io/bta-campaign-website/)
+The website is deployed here: [https://master--meek-hamster-1d8ff9.netlify.app/](https://master--meek-hamster-1d8ff9.netlify.app/)
 
 ## Structure
 
