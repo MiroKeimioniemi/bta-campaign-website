@@ -34,7 +34,7 @@ export default function DataVisualizer(props) {
     let lifeExpectancy = matchLifeExpectancy(latest.country);
     let remainingLifeExpectancy = Math.max(0, lifeExpectancy - latest.age);
     let remainingLifeExpectancyInHours = (remainingLifeExpectancy * 365 * 24);
-    let remainingLifeExpectancyYears = Math.floor(remainingLifeExpectancyInHours / (365 * 24));
+    let remainingLifeExpectancyYears = Math.floor(lifeExpectancy);
     let remainingLifeExpectancyMonths = (((remainingLifeExpectancyInHours % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
 
     // Estimated waking time of the latest data entry
@@ -61,13 +61,14 @@ export default function DataVisualizer(props) {
     let proportionOnlineMonths = ((((proportionOnline * remainingWakingTimeInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
 
     // Unwanted social media usage of the latest data entry
-    let overtimeYears = Math.floor(((proportionOnline - idealProportionOnline) * remainingWakingTimeInHours) / (365 * 24));
-    let overtimeMonths = (((((proportionOnline - idealProportionOnline) * remainingWakingTimeInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
+    let overtimeYears = Math.floor(((proportionOnline - idealProportionOnline) * remainingLifeExpectancyInHours) / (365 * 24));
+    let overtimeMonths = (((((proportionOnline - idealProportionOnline) * remainingLifeExpectancyInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
 
     // Extrapolating average of all responses to human collective
-    let entrySocialMediaTime;
 
     let timesStolen = data.map((entry) => {
+
+        let entrySocialMediaTime;
 
         if (latest.realUseTime.every((num) => num > 0)) {
             entrySocialMediaTime = (entry.realUseTime.reduce((i, j) => {return i + Number(j)}, 0) / 7);
@@ -75,10 +76,14 @@ export default function DataVisualizer(props) {
             entrySocialMediaTime = Number(entry.estimateUseTime);
         }
 
-        return Math.max(0, ((entrySocialMediaTime - entry.idealUseTime) / (24 * 60 * 365)));
+        let remainingLife = Math.max(0, (matchLifeExpectancy(entry.country) - entry.age));
+
+        return Math.max(0, (((entrySocialMediaTime - entry.idealUseTime) / (24 * 60)) * (remainingLife)));
     })
 
     let totalTimeStolen = ((timesStolen.reduce((i, j) => {return Number(i) + Number(j)}, 0) / data.length) * (8000000000 - data.length)).toFixed(0)
+    console.log(timesStolen);
+    console.log(totalTimeStolen);
     
     return (
         <div>
