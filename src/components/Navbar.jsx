@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-import './stylesheets/style.css'
-import './stylesheets/navbar.css';
-import logo from './images/bad-logo.png'
+import '../stylesheets/style.css'
+import '../stylesheets/navbar.css';
+import logo from '../images/bad-logo.png'
 
 function Navbar() {
 
