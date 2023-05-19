@@ -22,7 +22,7 @@ export default function DataVisualizer(props) {
                 return 82.24;
             case "au":
                 return 83.20;
-            case "ot":
+            default:
                 return 73;
         }
     }
