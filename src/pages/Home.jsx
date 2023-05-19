@@ -66,7 +66,8 @@ export default function Home() {
                     <p>
                         Therefore, we invite you to re-evaluate your relationship with social media by taking a break and 
                         only engaging with your local community for a month, after which you can carefully start re-introducing 
-                        the truly life-enhancing features of social media that you found yourself missing.
+                        the truly life-enhancing features of social media that you found yourself missing. Try the quiz and see
+                        if your perspective on social media changes upon seeing how major of a part it really plays in your life.
                     </p>
                 </article>
                 {/* Campaign video */}

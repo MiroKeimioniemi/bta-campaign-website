@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# #BeatTheAlgorithm - Campaign website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#BeatTheAlgorithm is a demo campaign website made for CS-C1180 - Verkkojulkaisemisen perusteet
+(roughly translating to: basics of web publishing) course held in Aalto University in the spring of 2023.
 
-## Available Scripts
+Its purpose is to serve as a wake up call about one's social media habits, framing these in a new, larger,
+life-wide perspective that hopefully gives the visitor some new insight about what they actually value
+about social media and what is just noise and procrastination. 
 
-In the project directory, you can run:
+The website is deployed here: [https://mirokeimioniemi.github.io/bta-campaign-website/](https://mirokeimioniemi.github.io/bta-campaign-website/)
 
-### `npm start`
+## Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The website consists of three pages:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Home
 
-### `npm test`
+Home contains the landing page, that always adapts to fully cover the viewport, a few paragraphs trying to
+persuade the visitor to take part in the challenge, the campaign video and links to further reading.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### About
 
-### `npm run build`
+About explains the purpose and rationale of the site and contains social media links.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Quiz
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Quiz has 2 questions about the visitor's demographics to determine their remaining life expectancy and 3
+questions about their social media usage designed to make them reflect on the positives and negatives of
+social media and seeing how they are doing with respect to the time they consider healthy and productive.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Submitting the form visualizes the daily average social media usage in a pie chart with sleep being in blue,
+productive and healthy social media usage in orange with the actual usage time exceeding it in red and the
+remaining waking time in green.
 
-### `npm run eject`
+If the visitor's social media usage does not exceed their ideal for healthy and productive social media time,
+they get a message congratulating them for being on top of their social media usage, whereas if they fail to
+stay within the goal, they get a message warning them about the months and years that the red slice compounds
+to if they live up to their life expectancy. For example, for a 20-year-old Finn, an hour a day of social media
+time exceeding their goal compounds to 1 year and 9 months of unwanted social media usage during their remaining
+life expectancy. This is supported by the numbers for remaining life expectancy in total as well as the portion
+of that actually spent awake, which is approximately only two thirds. Additionally, to help in evaluating the
+goal selected, percentages and their corresponding years and months for the goal and actual usage are displayed
+in the results as well. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Running the website locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To run the website on your local machine, you must have Node.js installed. After that, simply clone it onto
+your computer, install the dependencies by running ´npm install´ in the project directory and run it using 
+´npm start´, which will start the localhost and display the website usually at ´http://localhost:3000/´ by
+default, which can be opened using any browser of your choice. 

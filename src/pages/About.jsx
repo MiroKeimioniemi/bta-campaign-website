@@ -36,8 +36,12 @@ export default function About() {
                     can follow its developments or check out the rest of my portfolio 
                     <a href="https://users.aalto.fi/~keimiom1/index.html" className="about-link" target="_blank"> here</a>.
                 </p>
-                <p>If you are interested about the topic, potential collaborations or other projects of mine, you can contact,
-                    connect or follow on:</p>
+                <p>
+                    The source code for this website can be found 
+                    <a href="https://github.com/MiroKeimioniemi/bta-campaign-website" className="about-link" target="_blank"> here</a>.
+                    If you are interested about the topic, potential collaborations or other projects of mine, you can contact,
+                    connect or follow on:
+                </p>
                 <div class="social-media-icons-body">
                     <div class="social-media-row-1">
                         <a href="https://www.linkedin.com/in/miro-keimiöniemi/" target="_blank">
