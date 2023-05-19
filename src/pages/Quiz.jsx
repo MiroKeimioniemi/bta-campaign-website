@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import DataEntry from '../DataEntry';
 import '../stylesheets/style.css'
 import '../stylesheets/quiz.css'
 import bitrain from '../images/bitrain.png'
@@ -9,10 +10,39 @@ const countries = [
     { code: "us", name: "United States" },
     { code: "gb", name: "United Kingdom" },
     { code: "ca", name: "Canada" },
-    { code: "au", name: "Australia" }
+    { code: "au", name: "Australia" },
+    { code: "ot", name: "Other" },
   ];
 
 export default function Quiz() {
+
+    const [quizValues, setQuizValues] = useState({
+        age: '',
+        country: '',
+        idealUsage: '',
+        estimatedUsage: '',
+        day1: '',
+        day2: '',
+        day3: '',
+        day4: '',
+        day5: '',
+        day6: '',
+        day7: ''
+    });
+
+    const logInput = (input) => {
+        const { name, value } = input.target;
+        setQuizValues((prevQuizValues) => ({
+            ...prevQuizValues,
+            [name]: value,
+        }));
+    };
+
+    function submitQuiz() {
+        const data = new DataEntry(quizValues.age, quizValues.country, quizValues.idealUsage, quizValues.estimatedUsage, [ quizValues.day1, quizValues.day2, quizValues.day3, quizValues.day4, quizValues.day5, quizValues.day6, quizValues.day7 ]);
+        console.log(data);
+    }
+
     return(
         <div className="quiz-body">
             <img src={bitrain} className="bitrain" />
@@ -20,11 +50,11 @@ export default function Quiz() {
             <div className="demographics">
                 <div className="question">
                     <p>How old are you?</p>
-                    <input type="number" name="age" placeholder="Enter your age" className="input-field" min="0"></input>
+                    <input type="number" name="age" placeholder="Enter your age" className="input-field" min="0" onChange={logInput}></input>
                 </div>
                 <div className="question">
                     <p>Where do you live?</p>
-                    <select name="country" className="select-country">
+                    <select name="country" className="select-country" onChange={logInput}>
                         {countries.map((country) => (
                             <option key={country.code} value={country.code}>
                             {country.name}
@@ -34,26 +64,26 @@ export default function Quiz() {
                 </div>
             </div>
             <div className="question">
-                <p>How much daily social media time on average do you think would be genuinely healthy, productive and helpful for your goals and relationships?</p>
-                <input type="number" name="healthy-usage" placeholder="Minutes" className="input-field" min="0" max="24"></input>
+                <p>How many minutes of daily social media time on average do you think would be genuinely healthy, productive and helpful for your goals and relationships?</p>
+                <input type="number" name="idealUsage" placeholder="Minutes" className="input-field" min="0" onChange={logInput}></input>
             </div>
             <div className="question">
                 <p>Estimate honestly how many minutes of social media you use per day</p>
-                <input type="number" name="usage-estimate" placeholder="Minutes" className="input-field" min="0" max="24"></input>
+                <input type="number" name="estimatedUsage" placeholder="Minutes" className="input-field" min="0" onChange={logInput}></input>
             </div>
             <div className="question">
-                <p>Fill out your social media usage statistics for the past week from the wellness section of your phone</p>
+                <p>Fill out your social media usage statistics for the past week in minutes from the wellness section of your phone</p>
                 <div className="week-input">
-                    <input type="number" name="day1" placeholder="" className="weekday" min="0" max="24"></input>
-                    <input type="number" name="day2" placeholder="" className="weekday" min="0" max="24"></input>
-                    <input type="number" name="day3" placeholder="" className="weekday" min="0" max="24"></input>
-                    <input type="number" name="day4" placeholder="" className="weekday" min="0" max="24"></input>
-                    <input type="number" name="day5" placeholder="" className="weekday" min="0" max="24"></input>
-                    <input type="number" name="day6" placeholder="" className="weekday" min="0" max="24"></input>
-                    <input type="number" name="day7" placeholder="" className="weekday" min="0" max="24"></input>
+                    <input type="number" name="day1" placeholder="" className="weekday" min="0" onChange={logInput}></input>
+                    <input type="number" name="day2" placeholder="" className="weekday" min="0" onChange={logInput}></input>
+                    <input type="number" name="day3" placeholder="" className="weekday" min="0" onChange={logInput}></input>
+                    <input type="number" name="day4" placeholder="" className="weekday" min="0" onChange={logInput}></input>
+                    <input type="number" name="day5" placeholder="" className="weekday" min="0" onChange={logInput}></input>
+                    <input type="number" name="day6" placeholder="" className="weekday" min="0" onChange={logInput}></input>
+                    <input type="number" name="day7" placeholder="" className="weekday" min="0" onChange={logInput}></input>
                 </div>
             </div>
-            <button type="submit" className="submit-button">See Results</button>
+            <button type="submit" className="submit-button" onClick={submitQuiz}>See Results</button>
         </div>
     )
 }
