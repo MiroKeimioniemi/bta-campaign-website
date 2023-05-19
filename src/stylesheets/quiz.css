@@ -79,6 +79,10 @@
     box-shadow: 0 0 0.5rem 0rem rgba(0, 0, 0, 0.85);
 }
 
+#results {
+    width: 80vw;
+}
+
 @media only screen and (min-aspect-ratio: 14/9) {
 
     .week-input {
@@ -120,6 +124,10 @@
 
     .submit-button {
         margin-left: 10vw;
+    }
+
+    #results {
+        margin-left: -5vw;
     }
 
 }

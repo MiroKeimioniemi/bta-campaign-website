@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import DataEntry from '../DataEntry';
 import '../stylesheets/style.css'
 import '../stylesheets/quiz.css'
@@ -30,6 +30,12 @@ export default function Quiz() {
         day7: ''
     });
 
+    const targetRef = useRef(null);
+
+    const [submitted, setSubmitted] = useState(false);
+
+    const [dataEntries, setDataEntries] = useState([]);
+
     const logInput = (input) => {
         const { name, value } = input.target;
         setQuizValues((prevQuizValues) => ({
@@ -40,7 +46,11 @@ export default function Quiz() {
 
     function submitQuiz() {
         const data = new DataEntry(quizValues.age, quizValues.country, quizValues.idealUsage, quizValues.estimatedUsage, [ quizValues.day1, quizValues.day2, quizValues.day3, quizValues.day4, quizValues.day5, quizValues.day6, quizValues.day7 ]);
-        console.log(data);
+        setDataEntries((prevDataEntries) => [...prevDataEntries, data]);
+        setSubmitted(true);
+        if (targetRef != null) {
+            targetRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     return(
@@ -83,7 +93,15 @@ export default function Quiz() {
                     <input type="number" name="day7" placeholder="" className="weekday" min="0" onChange={logInput}></input>
                 </div>
             </div>
-            <button type="submit" className="submit-button" onClick={submitQuiz}>See Results</button>
+            <button type="submit" className="submit-button" onClick={submitQuiz} ref={targetRef}>{submitted ? "Update" : "See Results"}</button>
+            
+            {submitted && (
+                <div id="results">
+                    <p>Heyo</p>
+                    <p>{dataEntries.map(x => (x.age + '\n'))}</p>
+                </div>
+            )}
+
         </div>
     )
 }
