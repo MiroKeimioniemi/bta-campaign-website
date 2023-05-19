@@ -13,16 +13,16 @@ The website is deployed here: [https://mirokeimioniemi.github.io/bta-campaign-we
 
 The website consists of three pages:
 
-#### Home
+### Home
 
 Home contains the landing page, that always adapts to fully cover the viewport, a few paragraphs trying to
 persuade the visitor to take part in the challenge, the campaign video and links to further reading.
 
-#### About
+### About
 
 About explains the purpose and rationale of the site and contains social media links.
 
-#### Quiz
+### Quiz
 
 Quiz has 2 questions about the visitor's demographics to determine their remaining life expectancy and 3
 questions about their social media usage designed to make them reflect on the positives and negatives of
@@ -45,6 +45,6 @@ in the results as well.
 ## Running the website locally
 
 To run the website on your local machine, you must have Node.js installed. After that, simply clone it onto
-your computer, install the dependencies by running ´npm install´ in the project directory and run it using 
-´npm start´, which will start the localhost and display the website usually at ´http://localhost:3000/´ by
+your computer, install the dependencies by running `npm install` in the project directory and run it using 
+`npm start`, which will start the localhost and display the website usually at `http://localhost:3000/` by
 default, which can be opened using any browser of your choice. 
