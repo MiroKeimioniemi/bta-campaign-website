@@ -1,0 +1,43 @@
+.visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+}
+
+.piechart {
+    width: 80%;
+}
+
+.number {
+    font-weight: bold;
+    font-size: clamp(1rem, 4.5vh, 10vw);
+    margin-top: -1vh;
+    margin-bottom: 4vh;
+}
+
+.yearsAndMonths {
+    font-weight: normal;
+    font-size: clamp(1rem, 2.5vh, 3.9vw);
+}
+
+.statistics {
+    margin-top: 4vh;
+}
+
+@media only screen and (min-aspect-ratio: 1/1) {
+
+    .visual {
+        flex-direction: row;
+        width: 70vw;
+    }
+
+    .piechart {
+        width: 60%;
+    }
+
+    .statistics {
+        margin-left: 5vw;
+    }
+
+}

@@ -76,30 +76,28 @@ export default function Quiz() {
             </div>
             <div className="question">
                 <p>How many minutes of daily social media time on average do you think would be genuinely healthy, productive and helpful for your goals and relationships?</p>
-                <input type="number" name="idealUsage" placeholder="Minutes" className="input-field" min="0" onChange={logInput}></input>
+                <input type="number" name="idealUsage" placeholder="Minutes" className="input-field" min="0" max="1440" onChange={logInput}></input>
             </div>
             <div className="question">
                 <p>Estimate honestly how many minutes of social media you use per day</p>
-                <input type="number" name="estimatedUsage" placeholder="Minutes" className="input-field" min="0" onChange={logInput}></input>
+                <input type="number" name="estimatedUsage" placeholder="Minutes" className="input-field" min="0" max="1440" onChange={logInput}></input>
             </div>
             <div className="question">
                 <p>Fill out your social media usage statistics for the past week in minutes from the wellness section of your phone</p>
                 <div className="week-input">
-                    <input type="number" name="day1" placeholder="" className="weekday" min="0" onChange={logInput}></input>
-                    <input type="number" name="day2" placeholder="" className="weekday" min="0" onChange={logInput}></input>
-                    <input type="number" name="day3" placeholder="" className="weekday" min="0" onChange={logInput}></input>
-                    <input type="number" name="day4" placeholder="" className="weekday" min="0" onChange={logInput}></input>
-                    <input type="number" name="day5" placeholder="" className="weekday" min="0" onChange={logInput}></input>
-                    <input type="number" name="day6" placeholder="" className="weekday" min="0" onChange={logInput}></input>
-                    <input type="number" name="day7" placeholder="" className="weekday" min="0" onChange={logInput}></input>
+                    <input type="number" name="day1" placeholder="" className="weekday" min="0" max="1440" onChange={logInput}></input>
+                    <input type="number" name="day2" placeholder="" className="weekday" min="0" max="1440" onChange={logInput}></input>
+                    <input type="number" name="day3" placeholder="" className="weekday" min="0" max="1440" onChange={logInput}></input>
+                    <input type="number" name="day4" placeholder="" className="weekday" min="0" max="1440" onChange={logInput}></input>
+                    <input type="number" name="day5" placeholder="" className="weekday" min="0" max="1440" onChange={logInput}></input>
+                    <input type="number" name="day6" placeholder="" className="weekday" min="0" max="1440" onChange={logInput}></input>
+                    <input type="number" name="day7" placeholder="" className="weekday" min="0" max="1440" onChange={logInput}></input>
                 </div>
             </div>
             <button type="submit" className="submit-button" onClick={submitQuiz} ref={targetRef}>{submitted ? "Update" : "See Results"}</button>
             
             {submitted && (
                 <div id="results">
-                    <p>Heyo</p>
-                    <p>{dataEntries.map(x => (x.age + '\n'))}</p>
                     <DataVisualizer data={dataEntries} />
                 </div>
             )}
