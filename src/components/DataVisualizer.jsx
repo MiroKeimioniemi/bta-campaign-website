@@ -34,7 +34,7 @@ export default function DataVisualizer(props) {
     let lifeExpectancy = matchLifeExpectancy(latest.country);
     let remainingLifeExpectancy = Math.max(0, lifeExpectancy - latest.age);
     let remainingLifeExpectancyInHours = (remainingLifeExpectancy * 365 * 24);
-    let remainingLifeExpectancyYears = Math.floor(lifeExpectancy);
+    let remainingLifeExpectancyYears = Math.floor(remainingLifeExpectancyInHours / (365 * 24));
     let remainingLifeExpectancyMonths = (((remainingLifeExpectancyInHours % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
 
     // Estimated waking time of the latest data entry
