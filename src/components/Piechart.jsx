@@ -19,9 +19,9 @@ export const options = {
             fontSize: 20 }
     },
     chartArea: {
-        left: 0,
-        top: 0,
-        width:'100%',
+        left: 5,
+        top: 5,
+        width:'90%',
         height:'90%'},
     fontSize: 20
 };
@@ -30,6 +30,7 @@ export function Piechart(props) {
 
     console.log(props.ideal);
 
+    // Data to be displayed, calculated so that everything adds up to 24 hours
     const data = [
         ["Activity", "Hours per Day"],
         ["Sleep", (8 - Math.min(8, Math.max(0, ((props.actual * 24) - 16))))],

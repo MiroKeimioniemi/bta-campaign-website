@@ -7,6 +7,7 @@ export default function DataVisualizer(props) {
 
     const data = props.data;
 
+    // Matches the selected country to its average life expectancy
     function matchLifeExpectancy(country) {
         switch (country) {
             case "fi":
@@ -26,25 +27,27 @@ export default function DataVisualizer(props) {
         }
     }
 
-    // Latest response
-
+    // Latest data entry
     let latest = data[data.length - 1]
-    let country = latest.country;
 
-    let lifeExpectancy = matchLifeExpectancy(country);
+    // Life expectancy of the latest data entry
+    let lifeExpectancy = matchLifeExpectancy(latest.country);
     let remainingLifeExpectancy = Math.max(0, lifeExpectancy - latest.age);
     let remainingLifeExpectancyInHours = (remainingLifeExpectancy * 365 * 24);
     let remainingLifeExpectancyYears = Math.floor(remainingLifeExpectancyInHours / (365 * 24));
     let remainingLifeExpectancyMonths = (((remainingLifeExpectancyInHours % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
 
-    let remainingAwakingTimeInHours = ((remainingLifeExpectancy * 365 * 24) - (remainingLifeExpectancy * 365 * 8));
-    let remainingAwakingTimeYears = Math.floor(remainingAwakingTimeInHours / (365 * 24));
-    let remainingAwakingTimeMonths = (((remainingAwakingTimeInHours % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
+    // Estimated waking time of the latest data entry
+    let remainingWakingTimeInHours = ((remainingLifeExpectancy * 365 * 24) - (remainingLifeExpectancy * 365 * 8));
+    let remainingWakingTimeYears = Math.floor(remainingWakingTimeInHours / (365 * 24));
+    let remainingWakingTimeMonths = (((remainingWakingTimeInHours % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
 
+    // Ideal social media usage of the latest data entry
     let idealProportionOnline = (latest.idealUseTime / (24 * 60));
-    let idealProportionOnlineYears = Math.floor((idealProportionOnline * remainingAwakingTimeInHours) / (365 * 24));
-    let idealProportionOnlineMonths = ((((idealProportionOnline * remainingAwakingTimeInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
+    let idealOnlineYears = Math.floor((idealProportionOnline * remainingWakingTimeInHours) / (365 * 24));
+    let idealOnlineMonths = ((((idealProportionOnline * remainingWakingTimeInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
     
+    // Selects whether to use the estimate or actual statistics for social media usage time based on whether the statistics have been filled or not
     let socialMediaTime;
     if (latest.realUseTime.every((num) => num > 0)) {
         socialMediaTime = (latest.realUseTime.reduce((i, j) => {return i + Number(j)}, 0) / 7);
@@ -53,12 +56,14 @@ export default function DataVisualizer(props) {
     }
     console.log(socialMediaTime);
 
+    // Actual social media usage of the latest data entry
     let proportionOnline = (socialMediaTime / (24 * 60));
-    let proportionOnlineYears = Math.floor((proportionOnline * remainingAwakingTimeInHours) / (365 * 24));
-    let proportionOnlineMonths = ((((proportionOnline * remainingAwakingTimeInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
+    let proportionOnlineYears = Math.floor((proportionOnline * remainingWakingTimeInHours) / (365 * 24));
+    let proportionOnlineMonths = ((((proportionOnline * remainingWakingTimeInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
 
-    let overtimeYears = Math.floor(((proportionOnline - idealProportionOnline) * remainingAwakingTimeInHours) / (365 * 24));
-    let overtimeMonths = (((((proportionOnline - idealProportionOnline) * remainingAwakingTimeInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
+    // Unwanted social media usage of the latest data entry
+    let overtimeYears = Math.floor(((proportionOnline - idealProportionOnline) * remainingWakingTimeInHours) / (365 * 24));
+    let overtimeMonths = (((((proportionOnline - idealProportionOnline) * remainingWakingTimeInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
 
     // Information for all responses
     
@@ -72,6 +77,7 @@ export default function DataVisualizer(props) {
 
                 <div className="statistics">
 
+                    {/* Selects the sentence template to be used based on the numbers of years and months */}
                     {(overtimeYears > 0 || overtimeMonths > 0) ? 
                         (overtimeYears > 0 && overtimeMonths > 0) ? 
                             <p className="number">The algorithms are stealing {overtimeYears} years and {overtimeMonths} months of your life</p> 
@@ -84,13 +90,13 @@ export default function DataVisualizer(props) {
                     <p>Remaining life expectancy in total*:</p>
                     <p className="number">{remainingLifeExpectancyYears} years {remainingLifeExpectancyMonths} months</p>
 
-                    <p>Remaining awaking time:</p>
-                    <p className="number">{remainingAwakingTimeYears} years {remainingAwakingTimeMonths} months</p>
+                    <p>Remaining waking time:</p>
+                    <p className="number">{remainingWakingTimeYears} years {remainingWakingTimeMonths} months</p>
 
                     <p>Ideal proportion of waking time spent online:</p>
-                    <p className="number">{(idealProportionOnline * 100).toFixed(1)}% <span className="yearsAndMonths"> ({idealProportionOnlineYears} years {idealProportionOnlineMonths} month)</span></p>
+                    <p className="number">{(idealProportionOnline * 100).toFixed(1)}% <span className="yearsAndMonths"> ({idealOnlineYears} years {idealOnlineMonths} month)</span></p>
 
-                    <p>Proportion of waking time spent online:</p>
+                    <p>Proportion of waking time actually spent online:</p>
                     <p className="number">{(proportionOnline * 100).toFixed(1)}% <span className="yearsAndMonths"> ({proportionOnlineYears} years {proportionOnlineMonths} month)</span></p>
 
                 </div>

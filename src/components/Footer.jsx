@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import '../stylesheets/style.css';
 import '../stylesheets/footer.css';
+
 import logo from '../images/bad-logo.webp'
 
 function Footer() {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import '../stylesheets/style.css';
 import '../stylesheets/navbar.css';
+
 import logo from '../images/bad-logo.webp';
 
 function Navbar() {
@@ -14,6 +15,8 @@ function Navbar() {
 
   return (
     <div className="sticky">
+
+      {/* Desktop navigation bar */}
       <nav className="desktop-nav">
         <ul className="desktop-nav-links">
           <li className="desktop-nav-item">
@@ -31,8 +34,10 @@ function Navbar() {
         </ul>
       </nav>
 
+      {/* Mobile navigation bar */}
       <nav className="mobile-nav">
         <Link to="/" className="mobile-logo"><img src={logo} alt="logo" className="logo" /></Link>
+        {/* Hamburger menu icon */}
         <div class="hamburger" onClick={toggleMenu}>
             <svg viewBox="0 0 100 100" width="3.815rem" height="3.815rem" class="disable-pointer-effects">
                 <rect width="100" height="100" rx="8" fill="#000000"></rect>
@@ -43,6 +48,7 @@ function Navbar() {
         </div>
       </nav>
 
+      {/* Mobile menu */}
       {menuVisible && (
         <div className="menu">
           <ul className="mobile-menu-links">
