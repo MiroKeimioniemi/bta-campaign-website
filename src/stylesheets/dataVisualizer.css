@@ -17,6 +17,14 @@
     margin-bottom: 4vh;
 }
 
+.humanityCollective {
+    width: 80vw;
+    font-weight: bold;
+    font-size: clamp(1rem, 4.5vh, 10vw);
+    margin-top: 4vh;
+    margin-bottom: 6vh;
+}
+
 .yearsAndMonths {
     font-weight: normal;
     font-size: clamp(1rem, 2.5vh, 3.9vw);
@@ -33,6 +41,10 @@
   }
 
 @media only screen and (min-aspect-ratio: 1/1) {
+
+    .humanityCollective {
+        width: 60vw;
+    }
 
     .visual {
         flex-direction: row;

@@ -54,7 +54,6 @@ export default function DataVisualizer(props) {
     } else {
         socialMediaTime = Number(latest.estimateUseTime);
     }
-    console.log(socialMediaTime);
 
     // Actual social media usage of the latest data entry
     let proportionOnline = (socialMediaTime / (24 * 60));
@@ -65,7 +64,21 @@ export default function DataVisualizer(props) {
     let overtimeYears = Math.floor(((proportionOnline - idealProportionOnline) * remainingWakingTimeInHours) / (365 * 24));
     let overtimeMonths = (((((proportionOnline - idealProportionOnline) * remainingWakingTimeInHours) % (365 * 24)) / (365 * 24)) * 12).toFixed(0);
 
-    // Information for all responses
+    // Extrapolating average of all responses to human collective
+    let entrySocialMediaTime;
+
+    let timesStolen = data.map((entry) => {
+
+        if (latest.realUseTime.every((num) => num > 0)) {
+            entrySocialMediaTime = (entry.realUseTime.reduce((i, j) => {return i + Number(j)}, 0) / 7);
+        } else {
+            entrySocialMediaTime = Number(entry.estimateUseTime);
+        }
+
+        return Math.max(0, ((entrySocialMediaTime - entry.idealUseTime) / (24 * 60 * 365)));
+    })
+
+    let totalTimeStolen = ((timesStolen.reduce((i, j) => {return Number(i) + Number(j)}, 0) / data.length) * (8000000000 - data.length)).toFixed(0)
     
     return (
         <div>
@@ -102,6 +115,8 @@ export default function DataVisualizer(props) {
                 </div>
 
             </section>
+
+            <p className="humanityCollective">Extrapolating based on all responses, the algorithms are stealing a total of {totalTimeStolen} years of humanity’s collective time</p>
 
             <p className="sources">*Source: <a href="https://www.who.int/data/gho/data/indicators/indicator-details/GHO/life-expectancy-at-birth-(years)">https://www.who.int/data/gho/data/indicators/indicator-details/GHO/life-expectancy-at-birth-(years)</a> (accessed 19.5.2023)</p>
 

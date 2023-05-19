@@ -28,8 +28,6 @@ export const options = {
 
 export function Piechart(props) {
 
-    console.log(props.ideal);
-
     // Data to be displayed, calculated so that everything adds up to 24 hours
     const data = [
         ["Activity", "Hours per Day"],
