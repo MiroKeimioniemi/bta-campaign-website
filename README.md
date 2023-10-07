@@ -1,6 +1,6 @@
 # #BeatTheAlgorithm - Campaign website
 
-#BeatTheAlgorithm is a demo campaign website made for CS-C1180 - Verkkojulkaisemisen perusteet
+#BeatTheAlgorithm is a demo campaign website made for the CS-C1180 - Verkkojulkaisemisen perusteet
 (roughly translating to: basics of web publishing) course held in Aalto University in the spring of 2023.
 
 Its purpose is to serve as a wake-up call about one's social media habits, framing these in a new, larger,
