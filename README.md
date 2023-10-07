@@ -8,7 +8,7 @@ life-wide perspective via a short film and an interactive quiz calculating the p
 and the difference between intentional and accidental social media usage in concrete terms, that hopefully gives
 the visitor some new insight about what they actually value about social media and what is just noise and procrastination. 
 
-The website is deployed at: [https://beat-the-algorithm.netlify.app/quiz](https://beat-the-algorithm.netlify.app/quiz)
+The website is deployed at: [https://beat-the-algorithm.netlify.app/](https://beat-the-algorithm.netlify.app)
 
 ## Structure
 
