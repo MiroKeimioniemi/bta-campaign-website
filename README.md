@@ -4,10 +4,11 @@
 (roughly translating to: basics of web publishing) course held in Aalto University in the spring of 2023.
 
 Its purpose is to serve as a wake-up call about one's social media habits, framing these in a new, larger,
-life-wide perspective that hopefully gives the visitor some new insight about what they actually value
-about social media and what is just noise and procrastination. 
+life-wide perspective via a short film and an interactive quiz calculating the percentage of life spent online
+and the difference between intentional and accidental social media usage in concrete terms, that hopefully gives
+the visitor some new insight about what they actually value about social media and what is just noise and procrastination. 
 
-The website is deployed here: [https://master--meek-hamster-1d8ff9.netlify.app/](https://master--meek-hamster-1d8ff9.netlify.app/)
+The website is deployed at: [https://beat-the-algorithm.netlify.app/quiz](https://beat-the-algorithm.netlify.app/quiz)
 
 ## Structure
 
@@ -28,9 +29,9 @@ Quiz has 2 questions about the visitor's demographics to determine their remaini
 questions about their social media usage designed to make them reflect on the positives and negatives of
 social media and seeing how they are doing with respect to the time they consider healthy and productive.
 
-Submitting the form visualizes the daily average social media usage in a pie chart with sleep being in blue,
-productive and healthy social media usage in orange with the actual usage time exceeding it in red and the
-remaining waking time in green.
+Submitting the form visualizes the daily and lifewide average social media usage in a pie chart with sleep
+visualized in blue, productive and healthy social media usage in orange with the actual usage time exceeding
+it in red and the remaining waking time in green.
 
 If the visitor's social media usage does not exceed their ideal for healthy and productive social media time,
 they get a message congratulating them for being on top of their social media usage, whereas if they fail to
