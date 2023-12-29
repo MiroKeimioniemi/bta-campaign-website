@@ -34,7 +34,7 @@ export default function About() {
                     This currently remains just as a final project for a university course but may eventually be repurposed as
                     an actual campaign website for a larger project trying to actually address the issue. In the meantime, you
                     can follow its developments or check out the rest of my portfolio 
-                    <a href="https://users.aalto.fi/~keimiom1/index.html" className="about-link" target="_blank" rel="noreferrer"> here</a>.
+                    <a href="https://mirokeimioniemi.com" className="about-link" target="_blank" rel="noreferrer"> here</a>.
                 </p>
                 <p>
                     The source code for this website can be found 
