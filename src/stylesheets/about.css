@@ -113,9 +113,10 @@
     }
 
     .social-media-icon:hover {
-        margin: clamp(0.1rem, 0.445vw, 6.4vh);
-        width: clamp(1rem, 3.3vw, 6.4vh);
-        height: clamp(1rem, 3.3vw, 6.4vh);
+        margin: clamp(0rem, 0.435vw, 6.4vh);
+        margin-bottom: 0;
+        width: clamp(3.2rem, 4.4vw, 6.4vh);
+        height: clamp(3.2rem, 4.4vw, 6.4vh);
     }
 
 }
